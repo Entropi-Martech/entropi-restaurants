@@ -172,6 +172,61 @@ ol li i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--yell
 .tier.g .stat{text-align:left;transform:rotate(2deg)}
 .tier.g .who{text-align:right}
 @media (prefers-reduced-motion:reduce){.tier-art i{animation:none}}
+
+/* ---- wider screens. Phones (< 700px) are unchanged: everything below only applies from 700px up. ---- */
+@media (min-width:700px){
+  body{padding:28px 24px 72px}
+  .wrap{max-width:680px}
+  .logo{font-size:30px}
+  .pill{font-size:12px;padding:8px 14px}
+  .mast-top{font-size:11px;padding:8px 14px}
+  .mast-name{font-size:46px;padding:18px 12px 16px}
+  .mast-sub{font-size:12px;padding:10px 12px}
+  .hero{padding:30px 0 24px}
+  .hero h1{font-size:56px}
+  .tape{padding:12px 18px}
+  .btns{grid-template-columns:1fr 1fr}
+  .btns:has(> :only-child){grid-template-columns:minmax(0,420px)}
+  .belt{margin-left:-48px;margin-right:-48px}
+  .card{padding:26px 24px 22px}
+  .card h2{font-size:26px}
+  .card p{font-size:16px}
+  .ransom{font-size:28px;margin-top:40px}
+  .chips span{font-size:13px}
+  ol li{font-size:15px}
+  .promise{font-size:16px;padding:22px 22px}
+  .cta h2{font-size:36px}
+  .foot{font-size:13px;margin-top:34px}
+}
+@media (min-width:1000px){
+  .wrap{max-width:980px}
+  .mast-name{font-size:60px}
+  .hero h1{font-size:76px}
+  .stk1{right:80px}.stk2{right:150px}
+  .btns{max-width:720px}
+  .belt{margin-left:-80px;margin-right:-80px}
+  .ransom{font-size:32px}
+  /* tiers side by side, then pricing beside how-it-works */
+  .tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;align-items:stretch;margin-top:8px}
+  .tiers .card{margin-top:22px}
+  .duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:stretch;margin-top:12px}
+  .duo .card{margin-top:22px}
+  .tier .tag{font-size:20px;padding:8px 14px}
+  .tier-art{right:20px;top:42px}
+  .tier-art b{font-size:38px}
+  .tier-art i{font-size:26px;width:46px;height:46px}
+  .tier.g .tier-art{left:20px}
+  .tier .stat strong{font-size:30px}
+  /* a third of the width is too narrow for handle + stat side by side: stat goes under the creator */
+  .tier .row,.tier.g .row{flex-direction:column;align-items:flex-start;gap:14px}
+  .tier.g .row{align-items:flex-end}
+  .tier .stat{text-align:left}
+  .tier.g .stat{text-align:right}
+  .chips{justify-content:center}
+  .promise{max-width:760px;margin-left:auto;margin-right:auto}
+  .cta{max-width:760px;margin-left:auto;margin-right:auto}
+  .foot{max-width:760px;margin-left:auto;margin-right:auto;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -212,6 +267,7 @@ ol li i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--yell
 
   <h2 class="display ransom">Three tiers, by creator size</h2>
 
+  <div class="tiers">
   <div class="card tier taped t-r rot-l">
     <span class="tag">Starter</span>
     <span class="tier-art" aria-hidden="true"><b>01</b><i>🍜</i></span>
@@ -232,12 +288,14 @@ ol li i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--yell
     <div class="followers">10K–50K followers</div>
     <div class="row"><div class="who"><b>Example creator</b>Moni Romero @monica.romero.h<br><span class="small">13.0K followers</span></div><div class="stat"><strong>3.87M</strong><span>views from<br>dining posts</span></div></div>
   </div>
+  </div>
 
   <div class="chips">
     <span>At least 3–5 candidates a month</span><span>You approve every creator</span>
     <span>1 TikTok video or RedNote note each</span><span>50K+ followers: custom pricing</span>
   </div>
 
+  <div class="duo">
   <div class="card c-sun taped rot-r"><span class="cardstk" aria-hidden="true">🍕</span>
     <div class="kicker type">The fine print, in plain English</div>
     <h2>How pricing works</h2>
@@ -257,6 +315,7 @@ ol li i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--yell
     <h3>Monthly plan</h3>
     <p>Pick a tier → we run the month → monthly report within 7 days after the month ends.</p>
     <p class="small type" style="margin-top:10px">Service starts on the 1st of the month after signing. The time before is setup.</p>
+  </div>
   </div>
 
   <div class="promise"><strong>Our promise</strong>If we don't deliver the promised creator candidates within the month, you get a full refund. Renewal is optional.<span class="stamp">Guaranteed</span></div>
